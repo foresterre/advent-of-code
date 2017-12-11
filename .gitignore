@@ -10,6 +10,8 @@
 *.tar.gz
 *.rar
 hs_err_pid*
+.idea/sonarlint
+.idea/inspectionProfiles
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
