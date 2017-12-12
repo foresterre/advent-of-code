@@ -9,4 +9,10 @@ object Lib {
 
         return reader.use { it.readText() }
     }
+
+    fun readLines(path: String): List<String> {
+        val reader = File(path).bufferedReader()
+
+        return reader.useLines { it.toList() }
+    }
 }
