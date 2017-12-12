@@ -12,10 +12,10 @@ fun main(args: Array<String>) {
     val input = read("resources/day1/input.in")
     val intList = splitTextToInt(input)
 
-    println(day1part1SolveNaive(intList))
-    println(day1part1SolveFunctional(intList))
-    println(day1part2SolveNaive(intList))
-    println(day1part2SolveFunctional(intList))
+    println(solveCaptchaWithNextNaive(intList))
+    println(solveCaptchaWithNextFunctional(intList))
+    println(solveCaptchaHalfwayNaive(intList))
+    println(solveCaptchaHalfwayFunctional(intList))
 }
 
 
@@ -26,7 +26,8 @@ fun splitTextToInt(inputText: String): List<Int> {
     }
 }
 
-fun day1part1SolveNaive(inputDigits: List<Int>): Int {
+// Part 1
+fun solveCaptchaWithNextNaive(inputDigits: List<Int>): Int {
     var sum = 0
 
     for (i in 1 until inputDigits.size) {
@@ -41,14 +42,15 @@ fun day1part1SolveNaive(inputDigits: List<Int>): Int {
     return sum
 }
 
-fun day1part1SolveFunctional(inputDigits: List<Int>): Int {
+// Part 1
+fun solveCaptchaWithNextFunctional(inputDigits: List<Int>): Int {
     val prevNextCombos = inputDigits.zip(inputDigits.drop(1).plus(inputDigits.first()))
 
     return prevNextCombos.filter { (i, j) -> i == j }.sumBy { it.first }
 }
 
-
-fun day1part2SolveNaive(inputDigits: List<Int>): Int {
+// Part 2
+fun solveCaptchaHalfwayNaive(inputDigits: List<Int>): Int {
     // assumes lists with even amount of digits as per exercise
 
     var sum = 0
@@ -67,7 +69,8 @@ fun day1part2SolveNaive(inputDigits: List<Int>): Int {
     return sum
 }
 
-fun day1part2SolveFunctional(inputDigits: List<Int>): Int {
+// Part 2
+fun solveCaptchaHalfwayFunctional(inputDigits: List<Int>): Int {
     val skip = fun (index: Int): Int = (index + (inputDigits.size / 2)) % inputDigits.size
 
     val halfNextCombos = inputDigits.zip(inputDigits.mapIndexed { index, i -> i to inputDigits[skip(index)] })
