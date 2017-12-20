@@ -1,7 +1,7 @@
+--- Day 5: A Maze of Twisty Trampolines, All Alike ---
+
 PART 1
 ======
-
---- Day 5: A Maze of Twisty Trampolines, All Alike ---
 
 An urgent interrupt arrives from the CPU: it's trapped in a maze of jump instructions, and it would like assistance from any programs with spare cycles to help find the exit.
 
@@ -29,6 +29,20 @@ Positive jumps ("forward") move downward; negative jumps move upward. For legibi
 In this example, the exit is reached in 5 steps.
 
 How many steps does it take to reach the exit?
+
+Your puzzle answer was 318883.
+
+
+PART 2
+======
+
+Now, the jumps are even stranger: after each jump, if the offset was three or more, instead decrease it by 1. Otherwise, increase it by 1 as before.
+
+Using this rule with the above example, the process now takes 10 steps, and the offset values after finding the exit are left as 2 3 2 3 -1.
+
+How many steps does it now take to reach the exit?
+
+Your puzzle answer was 23948711.
 
 
 Source
